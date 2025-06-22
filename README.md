@@ -12,8 +12,7 @@
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Results](Results)
 
 ---
 
@@ -214,25 +213,10 @@ Frontend runs at: `http://localhost:3000`
 
 ---
 
-## 🤝 Contributing
+### RESULTS
+![image](https://github.com/user-attachments/assets/aefa4fd9-0e06-4b94-adba-ffdda753cd13)
+![image](https://github.com/user-attachments/assets/f285bb7b-9959-4ee0-ad40-d5242f24b201)
+![image](https://github.com/user-attachments/assets/3dfe9de6-38a8-4df6-9c19-eb7ef202e7d1)
 
-Contributions are welcome!  
-To contribute:
 
-1. Fork the repository  
-2. Create a new branch:  
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Commit your changes:  
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. Push and open a pull request.
 
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-See the [LICENSE](./LICENSE) file for details.
