@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom container for the resume preview */
+.resume-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Ensure long links wrap or truncate */
+a {
+  word-break: break-word;
+  display: inline-block; /* Allows max-width to work */
+  max-width: 100%; /* Constrain to parent width */
+}
+
+/* Custom print styling for the resume preview */
+@media print {
+    body {
+        background: white !important;
+        -webkit-print-color-adjust: exact; /* For WebKit browsers */
+        print-color-adjust: exact; /* Standard property */
+        box-shadow: none;
+        margin: 0;
+        font-family: 'Inter', sans-serif; /* Ensure font is applied for print */
+    }
+
+    /* Target the main App container to ensure it fills print width and hide non-resume elements */
+    #root > div {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        display: block; /* Ensure it takes full print width */
+    }
+
+    /* Hide elements not needed in print (input form, buttons, navigation) */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8.max-w-7xl.mx-auto > div:first-child, /* Input form column */
+    .flex.flex-col.gap-4.items-center, /* Export/AI buttons */
+    .flex.flex-wrap.gap-2.justify-center.mb-6, /* Section navigation buttons */
+    .mb-4.p-4.bg-white.rounded-xl.shadow-md /* Template selection box */
+    {
+        display: none !important;
+    }
+    
+    /* Make the preview column take full width when printing */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8.max-w-7xl.mx-auto > div:last-child {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Ensure .resume-container has print-specific padding and no extra styling */
+    .resume-container {
+        padding: 15mm !important; /* Explicit padding for print to prevent content cutting */
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: white !important; /* Ensure white background for print */
+    }
+
+    /* Ensure ResumePreview takes full space and removes shadow/padding when printed */
+    .ResumePreview {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        page-break-after: always; /* Ensure each resume is on a new page if needed */
+    }
+
+    /* General print styles for all templates (overridden by template-specific styles if needed) */
+    .resume-container h1, .resume-container h2, .resume-container h3 {
+        color: #000000 !important; /* Ensure all headings are black in print */
+        font-weight: bold !important; /* Ensure all headings are bold in print */
+    }
+    .resume-container section h2 {
+        border-bottom: 2px solid #000000 !important; /* Ensure consistent black underline for section headers */
+    }
+    .resume-container p, .resume-container li {
+        color: #000000 !important; /* Ensure all text is black in print */
+        font-weight: normal !important; /* Reset font weight for body text */
+    }
+    /* Explicitly maintain bolding for elements with font-bold class */
+    .resume-container .font-bold {
+        font-weight: bold !important;
+    }
+    .resume-container .text-gray-600, .resume-container .text-gray-700, .resume-container .text-gray-800, .resume-container .text-gray-900 {
+        color: #000000 !important; /* Force all gray text to black for print */
+    }
+    .resume-container a {
+        color: #0000ee !important; /* Keep links blue but ensure they are readable */
+        text-decoration: underline !important; /* Ensure links are underlined */
+    }
+
+}
+
+/* Inter font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}

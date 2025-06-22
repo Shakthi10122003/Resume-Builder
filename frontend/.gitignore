@@ -1,0 +1,36 @@
+# ⚙️ Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 📦 Build output
+build/
+dist/
+coverage/
+
+# 🧪 Testing
+/coverage
+
+# 🌐 Environment variables
+.env
+.env.*
+!env.example
+
+# 🔐 Firebase or Google Cloud service keys
+*.json
+
+# 💻 VS Code config
+.vscode/
+
+# 💻 OS-specific files
+.DS_Store
+Thumbs.db
+
+# 🔄 pnpm & Yarn Plug'n'Play
+.pnp
+.pnp.js
+
+# 🔨 React & CRA
+/public/static/
+*.lock
